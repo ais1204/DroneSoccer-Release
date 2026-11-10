@@ -47,7 +47,7 @@ Get-ChildItem -Recurse "$env:USERPROFILE\Downloads\DroneSoccer-Windows-LAN" | Un
 | 移動 | ↑↓←→ | WASD | 右スティック |
 | 上昇・下降 | W / S | Space / Left Shift | 左スティック(上下) |
 | 旋回 | A / D | Q / E | 左スティック(左右) |
-| 変速(3段) | Left Shift | R | LB |
+| 変速(4段) | Left Shift | R | LB |
 | 視点の切り替え | C | C | RB |
 | メニュー（試合中も開ける） | Esc | Esc | Start |
 
@@ -68,6 +68,13 @@ Get-ChildItem -Recurse "$env:USERPROFILE\Downloads\DroneSoccer-Windows-LAN" | Un
 クラス（Class 40 / Class 20）とルール（FIDA / JDSF）は、試合を始める前の画面で選びます。組み合わせごとのルールブックは [RULEBOOK.md](RULEBOOK.md) から開けます。部屋の試合は、部屋を作った人の組み合わせになります。
 
 ## 更新内容
+
+**v0.9.1**
+
+- 変速を4段階にしました。高速の上に最高速を足し、キーを押すたびに中速 → 高速 → 最高速 → 低速 → 中速の順に変わります。最高速は中速の倍まで機体が傾き、Class 20 で約 10 m/s 出ます（高速は約 7 m/s）。
+- 速い段から遅い段へ切り替えても、その瞬間に急ブレーキがかからないようにしました。空気抵抗で少しずつ遅くなります。
+- CPU の Expert は、遠くへ移動するときだけ最高速に上げ、目標の近くで止まれる速さまで落ちたら高速に戻します。体当たりの強さは変えていません。
+- 通信の中身が変わったので、v0.9.0 とは同じ部屋で遊べません。全員で v0.9.1 に入れ替えてください。
 
 **v0.9.0**
 
